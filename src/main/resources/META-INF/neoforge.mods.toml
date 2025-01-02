@@ -1,0 +1,34 @@
+modLoader = "kotlinforforge"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "spawn_notification"
+version = "1.6-neoforge-1.0.0"
+displayName = "Cobblemon Spawn Notification"
+authors = "timinc aka Timothy Metcalfe"
+description = '''
+When a Legendary and/or Shiny Pokemon shows up, a message is broadcast to all players on the server.
+'''
+#logoFile = ""
+
+[[dependencies.cobblemon_neoforge_mdk]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblemon_neoforge_mdk]]
+modId = "neoforge"
+mandatory = true
+versionRange = "[21.1.66,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblemon_neoforge_mdk]]
+modId = "cobblemon"
+mandatory = true
+versionRange = "[1.6.0,1.7.0)"
+ordering = "AFTER"
+side = "BOTH"
