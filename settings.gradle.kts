@@ -1,4 +1,4 @@
-rootProject.name = "cobblemon-spawn-notification-1.6-neoforge"
+rootProject.name = "cobblemon-spawn-notification"
 
 pluginManagement {
     repositories {
