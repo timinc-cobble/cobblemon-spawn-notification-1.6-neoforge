@@ -34,7 +34,7 @@ object PlayerUtil {
      * @return The filtered list of players.
      */
     fun getValidPlayers(
-        pos: BlockPos, range: Int, dimensionKey: ResourceKey<Level>
+        pos: BlockPos, range: Int, dimensionKey: ResourceKey<Level>,
     ): List<Player> {
         val serverInstance = server() ?: return emptyList()
 

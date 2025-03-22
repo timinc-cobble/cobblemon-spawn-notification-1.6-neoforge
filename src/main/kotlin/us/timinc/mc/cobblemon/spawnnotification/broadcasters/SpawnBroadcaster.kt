@@ -15,7 +15,7 @@ class SpawnBroadcaster(
     val coords: BlockPos,
     val biome: ResourceLocation,
     val dimension: ResourceLocation,
-    val player: ServerPlayer?
+    val player: ServerPlayer?,
 ) {
     private val shiny
         get() = pokemon.shiny

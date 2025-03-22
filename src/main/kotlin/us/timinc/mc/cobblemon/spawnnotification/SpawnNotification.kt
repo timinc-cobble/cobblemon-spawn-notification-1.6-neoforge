@@ -20,6 +20,7 @@ import us.timinc.mc.cobblemon.spawnnotification.events.PlayShinySound
 object SpawnNotification {
     const val MOD_ID = "spawn_notification"
     var config: SpawnNotificationConfig = ConfigBuilder.load(SpawnNotificationConfig::class.java, MOD_ID)
+    var eventsListening = false
 
     @JvmStatic
     var SHINY_SOUND_ID: ResourceLocation = ResourceLocation.parse("$MOD_ID:pla_shiny")
@@ -31,6 +32,8 @@ object SpawnNotification {
     object Registration {
         @SubscribeEvent
         fun onInit(e: ServerStartedEvent) {
+            if (eventsListening) return
+            eventsListening = true
             CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.LOWEST, BroadcastSpawn::handle)
             CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.LOWEST, PlayShinySound::handle)
             CobblemonEvents.POKEMON_SENT_POST.subscribe(Priority.LOWEST, PlayShinyPlayerSound::handle)

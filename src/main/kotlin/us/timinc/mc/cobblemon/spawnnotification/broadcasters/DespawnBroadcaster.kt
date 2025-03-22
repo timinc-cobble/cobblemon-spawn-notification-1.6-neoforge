@@ -15,7 +15,7 @@ class DespawnBroadcaster(
     val coords: BlockPos,
     val biome: ResourceLocation,
     val dimension: ResourceLocation,
-    val reason: DespawnReason
+    val reason: DespawnReason,
 ) {
     private val shiny
         get() = pokemon.shiny

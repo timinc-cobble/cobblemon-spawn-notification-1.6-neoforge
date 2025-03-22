@@ -13,7 +13,7 @@ class SoundBroadcaster(private val level: Level, private val pos: BlockPos, priv
     }
 
     fun playShinySoundClient(
-        player: Player
+        player: Player,
     ) {
         player.playSound(sound, 10f, 1f)
     }
