@@ -76,7 +76,7 @@ object BroadcastDespawn {
         biome: ResourceLocation,
         dimension: ResourceLocation,
         level: Level,
-        reason: DespawnReason
+        reason: DespawnReason,
     ) {
         DespawnBroadcaster(
             pokemon,
