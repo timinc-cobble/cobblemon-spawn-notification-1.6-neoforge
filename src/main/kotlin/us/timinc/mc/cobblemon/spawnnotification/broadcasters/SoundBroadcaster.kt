@@ -7,14 +7,16 @@ import net.minecraft.sounds.SoundSource
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.Level
 
-class SoundBroadcaster(private val level: Level, private val pos: BlockPos, private val sound: SoundEvent) {
+class SoundBroadcaster(
+    val level: Level,
+    val pos: BlockPos,
+    val sound: SoundEvent,
+) {
     fun playShinySound() {
         level.playSoundServer(pos.center, sound, SoundSource.NEUTRAL, 10f, 1f)
     }
 
-    fun playShinySoundClient(
-        player: Player,
-    ) {
+    fun playShinySoundClient(player: Player) {
         player.playSound(sound, 10f, 1f)
     }
 }

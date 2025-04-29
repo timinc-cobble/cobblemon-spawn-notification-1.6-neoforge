@@ -14,10 +14,10 @@ object PlayShinySound {
 
         if (config.playShinySound && evt.entity.pokemon.shiny) {
             val broadcaster = SoundBroadcaster(
-                world.level, pos, SHINY_SOUND_EVENT
+                world, pos, SHINY_SOUND_EVENT
             )
             if (config.broadcastRangeEnabled) {
-                getValidPlayers(world, pos).forEach { broadcaster.playShinySoundClient(it) }
+                getValidPlayers(world.dimension(), pos).forEach { broadcaster.playShinySoundClient(it) }
             } else {
                 broadcaster.playShinySound()
             }
