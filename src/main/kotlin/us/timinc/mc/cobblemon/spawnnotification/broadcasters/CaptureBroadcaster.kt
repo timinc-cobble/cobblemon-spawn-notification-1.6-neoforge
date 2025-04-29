@@ -5,14 +5,16 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.level.ServerPlayer
 import us.timinc.mc.cobblemon.spawnnotification.SpawnNotification.BUCKET
 import us.timinc.mc.cobblemon.spawnnotification.SpawnNotification.config
 
-class DespawnBroadcaster(
+class CaptureBroadcaster(
     val pokemon: Pokemon,
     val coords: BlockPos,
     val biome: ResourceLocation,
     val dimension: ResourceLocation,
+    val player: ServerPlayer?,
 ) {
     private val shiny
         get() = pokemon.shiny
@@ -41,7 +43,7 @@ class DespawnBroadcaster(
         if (!shouldBroadcast) return null
 
         return config.getComponent(
-            "notification.despawn",
+            "notification.capture",
             if (shiny && config.broadcastShiny) config.getComponent(
                 "notification.shiny",
                 config.getComponent("shiny")
@@ -68,6 +70,10 @@ class DespawnBroadcaster(
             if (config.announceCrossDimensions) config.getComponent(
                 "notification.dimension",
                 config.getRawComponent("dimension.${dimension.toLanguageKey()}")
+            ) else "",
+            if (config.announceDespawnPlayer && player != null) config.getComponent(
+                "notification.player.despawn",
+                player.name
             ) else ""
         )
     }
