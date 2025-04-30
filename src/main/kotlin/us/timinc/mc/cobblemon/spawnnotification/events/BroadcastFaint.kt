@@ -16,6 +16,7 @@ import us.timinc.mc.cobblemon.spawnnotification.SpawnNotification.config
 import us.timinc.mc.cobblemon.spawnnotification.broadcasters.FaintBroadcaster
 import us.timinc.mc.cobblemon.spawnnotification.util.Broadcast
 import us.timinc.mc.cobblemon.spawnnotification.util.PlayerUtil.getValidPlayers
+import us.timinc.mc.cobblemon.spawnnotification.util.getUuidOrNull
 
 object BroadcastFaint {
 
@@ -56,9 +57,9 @@ object BroadcastFaint {
         if (!entity.pokemon.persistentData.contains(FAINT_HAS_ENTITY)) return
 
         val faintHasEntity = entity.pokemon.persistentData.getBoolean(FAINT_HAS_ENTITY)
-        val attackingEntity = if (!faintHasEntity) null else entity.pokemon.persistentData.getUUID(
+        val attackingEntity = if (!faintHasEntity) null else entity.pokemon.persistentData.getUuidOrNull(
             FAINT_ENTITY
-        )?.let { level.getEntity(it) }
+        )?.let { level.entities.get(it) }
         val coords = entity.blockPosition()
 
         broadcast(
