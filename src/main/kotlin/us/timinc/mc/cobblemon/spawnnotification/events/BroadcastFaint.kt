@@ -52,7 +52,7 @@ object BroadcastFaint {
 
     fun handle(entity: Entity, level: ServerLevel) {
         if (entity !is PokemonEntity) return
-        if (!entity.persistentData.contains(SHOULD_BROADCAST_FAINT)) return
+        if (!entity.pokemon.persistentData.contains(SHOULD_BROADCAST_FAINT)) return
 
         val attackingEntity = entity.pokemon.persistentData.getUuidOrNull(
             FAINT_ENTITY
