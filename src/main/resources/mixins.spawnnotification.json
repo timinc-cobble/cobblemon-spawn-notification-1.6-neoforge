@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "package": "us.timinc.mc.cobblemon.spawnnotification.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "mixins": [
+    "JourneyMapPresent",
+    "XaerosMiniPresent",
+    "XaerosWorldPresent"
+  ]
+}
