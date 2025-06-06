@@ -37,6 +37,13 @@ dependencies {
     implementation("thedarkcolour:kotlinforforge-neoforge:${property("kff_version")}") {
         exclude("net.neoforged.fancymodloader", "loader")
     }
+
+    // JourneyMap
+    modImplementation("maven.modrinth:journeymap:${property("journeymap_version")}")
+
+    // XaerosMinimap
+    modImplementation("maven.modrinth:xaeros-minimap:${property("xaeros-minimap_version")}")
+    modImplementation("maven.modrinth:xaeros-world-map:${property("xaeros-world-map_version")}")
 }
 
 tasks.getByName<Test>("test") {
