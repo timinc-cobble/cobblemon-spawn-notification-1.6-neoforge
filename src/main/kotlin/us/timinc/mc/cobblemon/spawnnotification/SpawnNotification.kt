@@ -2,17 +2,13 @@ package us.timinc.mc.cobblemon.spawnnotification
 
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.events.CobblemonEvents
-import com.google.common.eventbus.EventBus
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.sounds.SoundEvent
-import net.neoforged.bus.api.SubscribeEvent
-import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.fml.common.Mod
 import net.neoforged.neoforge.common.NeoForge
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent
 import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent
-import net.neoforged.neoforge.event.server.ServerStartedEvent
 import us.timinc.mc.cobblemon.spawnnotification.config.ConfigBuilder
 import us.timinc.mc.cobblemon.spawnnotification.config.SpawnNotificationConfig
 import us.timinc.mc.cobblemon.spawnnotification.events.*
